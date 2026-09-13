@@ -5,6 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "graphviz>=0.21",
     "ipykernel>=7.2.0",
     "matplotlib>=3.10.9",
     "numpy>=2.4.6",
