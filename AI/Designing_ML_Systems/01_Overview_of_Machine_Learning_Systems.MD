@@ -83,3 +83,73 @@ If you wait for the technology to prove its worth to the rest of the indusry bef
 
 **Machine Learning Use Cases**
 -
+* ML is important in the era of informations and services.
+* Search engine / Recommender system
+* Amazon and Netflix search results in mostly ML. recommended items that are predicted to best match people taste and style.
+* Your smart phone is assisting you in many of your daily activities predictive typing: predict what you mgiht say next.
+* ML translations: automatically translating from one language to another.
+* Smart security cameras can let you know when your pets leave home or watch your old parents.
+* Enterprise ML application is the main and requires stricter accuracy but flexible on latency.
+
+ML Applications in enterprises are diverse:
+1. Internal use cases: reducting costs, generating customer insights and intelligence, internal processing automation.
+2. External use cases: improving customer experience, retaining customers, interacting with customers.
+
+"Fraud Detection" is the oldest applications of ML in the enterprise world.
+Building a system that learn from historical fraud transactions and predict whether a future transaction is fraudulent.
+
+"Price Optimization" is the process of estimating a price at a certain time perioud to macimize a defined objective function, such as the company's margin, revenue, or growth rate.s
+To run a business, it's important to be able to forecast customer demand so that you can prepare a budget, stock inventory, allocate resources, and update pricing strategy.
+
+"Churn Prediction" is predicting when a specific customer is about to stop using your products or services so that you can take appropriate actions to win them back.
+Churn prediction can be used not only for customers but also for employees.
+
+"Brand Monitoring" It's important to monitor how the public and your customers perceive your brand. 
+If there's a negative sentiment in your brand, you might want to address it as soon as possible.
+Sentiment analysis is a typical ML task.
+
+"ML in Healthcare" detecting skin cancer and diagnose diabetes.
+
+**Understanding Machine Learning Systems**
+-
+**1. Machine Learning in Research Versus in Production**
+* Yes, they're different.
+* Different stakeholder and requirements
+* The most common objective is model performance, develop a model that achieves the state-of-the-art results on benchmark datasets.
+* Different requirements leads to conflicting, conflicting leads to make it hard to design, develop, and select an ML model that satisfies all the requirements.
+* Tips: develop one model for each objective and combine their predictions.
+* It's important to understand all requirements from all stakeholders involved and how these requirements are.
+
+Production having different requirements from research is one of the reason why successful reseach projects might not always be used in production.
+Ensembling combines "multiple learning algorithms to obtain better predictive performance than could be obtained from any of the constituent learning algothms alone.
+
+The ensembling tends to make a system too complex to be useful in production: slower to make predictions or harder to interpret the results.
+For many tasks, a small improvement in performance can result in a hugh boost in revenue or cost saving.
+
+Complex models must perform significantly better to justify the complexity
+
+**2. Critism of ML Leaderboards**
+Benchmarks have helped drive advances in Natural Language Processing or NLP by incentivizing the creation of more accurate models at the expense of other qualities valued by practitioners such as compactness, fairness, and energy efficiency.
+
+* Rookies mistakes = Focusing too much on the model development part and not enough on the model deployment and maintenance part.
+* The validation data is mostly smaller than the training data.
+* During development phase, training is the bottlenect. The model has been deployed phase, inference is the bottleneck.
+* Latency = the time it takes from receiving a quary to returning the result. Referring to the duration that a request is waiting to be handled. response time.
+* If the average latency is 10 ms, it takes 10 ms to process a quary, the throughput is 100 queries/second.
+* if the average latency is 100 ms, the throughput is 10 quesries/second.
+* FPS = The higher the better, The latency = the lower the better.
+
+Once the model is deployed, the latency matters a lot.
+More that 60% of mobiles users will leave a page if it takes more than 3 seconds to load.
+
+To reduce latency in production, you might have to reduce the number of queries you can process on the same hardware at a time.
+The latency is not an individual number but a distribution. but this number can be misleading.
+
+We can check by looking at the percentiles.
+* The most common are 50th percentile or the median.
+* Higher percentiles also help you discover outliers, by looking at 90th or 95th or p90 or p95
+* Higher percentiles are important to look at because even though they account for a small percentage of your users, sometimes they can be the most important users!
+* on the Amazon website, the customers with the slowest requests are often those who have the most data on their accounts because they have made many purchases. that's the most valuable customers.
+* It's a common practice to use high percentiles to specify the performance requirements for your system.
+
+**3. Data**
