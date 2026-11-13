@@ -47,3 +47,43 @@
 
 **Iterative Process**
 -
+* It's an never ending process. Continually monitored and updated.
+* The process looks more cycle than a traditional ML. Beyond just collect data, train a model, deploy a model, and done.
+* (1.) Project Scoping = Laying goals, objectives, identified and involved stakeholders, resources allocation.
+* (2.) Data Engineering = Handling data from different sources and formats.
+* (3.) ML model development = Extracting features and develop initial models leveraging these features.
+* (4.) Deployment = Made it accessible to everyone
+* (5.) Monitoring and Continual Learning = Monitored and maintained to be adaptive to changing environments
+* (6.) Business Analysis = Business goals and analyzed to generate business insights.
+
+**Framing ML Problems**
+- 
+* defined by inputs, outputs, and the objective function that guides the learnging process
+* The objective function is to minimize the difference between the predcited department and the actual department.
+
+**Types of ML Tasks**
+-
+* The output of your model dictates the task type of my ML problem
+
+**1. Classification Versus Regression**
+* Classification models classify inputs into different categories.
+* Regression models can easily be framed as a classification model and vice versa.
+
+**2. Binary Versus Multiclass Classification**
+* The fewer classes there are to classify, the simpler the problem is
+* Dealing with binary classification problems is much easier than dealing with multi-class problems.
+* When the number if classes is large, hierachical classification might be useful.
+
+**3. Multiclass versus Multilabel Classification**
+* Treat it as i would a multiclass classification.
+* The second approach is to turn it into a set of binary classification problems.
+* Multilabel means that the number of classes an example can have vaties from example to example.
+
+**4. Multiple Ways to Frame a Problem**
+* Changing the way I frame my problem might make my problem significantly harder to easier.
+* I might have to retrain my model from scratch, or at least retrain all the components of your model whose number of parameters depends on it.
+* Maybe build a new framing for a every new inputs for new features could help this.
+
+**Objective Functions**
+-
+*
