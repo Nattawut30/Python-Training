@@ -86,4 +86,40 @@
 
 **Objective Functions**
 -
-*
+* Guiding the learning process.
+* Usually to minimize or optimize the loss caused by wrong predictions.
+* RMSE = Root Mean Squared Error
+* MAE = Mean Aboslute Error
+* Calculate the cross entropy with the following code:
+
+```python
+def cross_entropy(p, q):
+    return -sum([p[i] * np.log(q[i]) for i in range(len(p))])
+
+    p = [0, 0, 0, 1]
+    q = [0.45, 0.2, 0.02, 0.33]
+    cross_entropy(p, q)
+```
+
+**1.Decoupling Objectives**
+* Maximize user's engagement while minimizing the spread of extream views and misinformation.
+* loss = alpha quality_loss + Beta engagement_loss
+* Or train 2 different models, each optimizing one loss so we have 2 models: Quality model + Engagement_model
+* When there are multiple objectives, it's a good idea to decouple them first because it makes model developemtn and maintenance easier.
+* It's also easier for maintenance since different objectives might need different maintenance schedules.
+
+**Mind Versus Data**
+-
+* The success of an ML system depends on the data it was trained on.
+* Focus on manging and improving their data matters!
+* "Data is profoundly dumb"
+* A massive amount of data with a simple learning algorithm create incredibly bad learners.
+* The structure should allow us to design systems that can learn more from less data.
+* A researcher who choose to pursure intelligent designs over methods that leverage-computation will eventually learn a bitter lesson.
+* The long run goes for the leveraging of computation.
+* "I don't have a better algorithms. I just have more data."
+* Start with building out your data, both in terms of quality and quantity.
+
+More data at lower quality such as data that is outdated or data with incorrect labels, might even hurt the model's performance!
+Quality of the data > Your fantasy algorithm!
+Business Objectives come first -> ML objectives -> development of ML models.
