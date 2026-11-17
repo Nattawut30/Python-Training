@@ -25,4 +25,67 @@
 
 **Data Formats**
 -
-* 
+* Storing your data isn't always straightforward and for some cases, can be costly.
+* It's important to think about how the data will be used in the future so that the format you use will make sense.
+* Data Serialization = The process of converting a data structure or object state into a format that can be stored or transmitted and reconstructured later.
+
+**JSON**
+-
+* JSON, JavaScript Object Notation, is everywhere.
+* Human-readable, and key-value pair paradigm is simple but powerful
+* Capable of handling data of different levels of structuredness.
+
+```JSON
+{
+    "firstName": "Boatie",
+    "lastName": "McBoatFace",
+    "isVibing": true,
+    "age": 12,
+    "address":{
+        "streetAddress": "12 Ocean Drive",
+        "city": "Port Royal",
+        "postalCode": "10021-3100"
+    }
+}
+```
+
+* It's painful to retrospectively go back ti change the schema.
+* JSON files are text files, which means they take up a lot of space
+
+**Row-Major Versus Column-Major Format**
+-
+* CSV, Comma-separated-values, is a row major which means consecutive element in a row are stored next to each other in memory.
+* Parquet, column-major, consecutive elements in a column are stored next to each other.
+* row-major formats = accessing data by rows is expected to be faster than accessing data by columns.
+* row-major formats like CSV are better for accessing examples.
+* column-major formats like Parquet are better for accessing features.
+* row-major formats are better when you have to do a lot of writes.
+* column-major ones are better when you have to do a lot of column-based reads.
+
+**Numpy Versus Pandas**
+-
+* pandas is DataFrame, column-major, 2d-table with rows and column
+* Numpy, can be specified, ndarray is created -> row-major by default
+* Accessing a DataFrame by row is so much slower than accessing the same DataFrame by column.
+* If you convert this same DataFrame to a NumPy ndarray, accessing a row becomes much faster.
+
+**Text Versus Binary Font**
+-
+* CSV and JSON are text files,
+* Parquet files are binary files.
+* Text file is generally a plain text,
+* A binary files is contain 0s and 1s can be read or used by programs that know how to interpret the raw bytes.
+* likely hexadecimal values, for corresponding bytes of the files, Binary files are more compact too.
+* AWS recommends using the Parquet format because "the Parquet format is up to 2x faster to unload and consumes up to 6x less storage in Amazon S3, compared to text formats."
+
+**Data Models**
+-
+* how data is represented.
+* car1 = its make, its model, its year, its color, and its price.
+* car2 = its owner, its license plate, and its history of registered addresses.
+* How you choose to represent data not only affects the way your systems are built, but also the problems your systems can solve.
+* Ex. Police offiver to track down the criminal by the car, or make it faster for clients to buy and browsing a car in the website.
+
+**Relational Model**
+-
+*
