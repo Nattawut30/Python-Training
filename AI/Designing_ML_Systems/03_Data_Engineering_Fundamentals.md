@@ -88,4 +88,101 @@
 
 **Relational Model**
 -
-*
+* data is organized into relations and each row of a table makes up a tuple.
+* I can shuffle the order of the rows or the order of the columns in a relation and it's still the same relation.
+* Data normalization can follow normal forms such as the first normal form (1NF), second normal form (2NF), etc.
+* Pineapple Press = This practice allows us to standardize spelling of the same value across different columns.
+* You can join the data from different relation back together, but joing can be expensive for large tables.
+* True relations can't contain duplicates.
+* SQL = declarative languages. Python = Imperative Paradigm.
+* Imperative Paradigm = Specify the steps needed for an action adn the computer excutes these steps to return the outputs.
+* Declarative Paradigm = Specify the outputs you want, and the computer figures out the steps needed to get you the queried outputs.
+* SQL can be used to solve any computation problem dependes on time and memory.
+* A query optimizer examines all possible ways to execute a query and finds the fastest way to do so.
+
+**From Declarative Data Systems to Declarative ML Systems**
+-
+* Declaring the features' schema and the task, and the system will figure out the best model to perform that task with given features.
+* Users won't have to write code to construct, train and tune models.
+* Ludwid.
+* It experiments with multiple model achitectures and picks out the best model given the features and the tasks.
+
+```Python
+# Identify predictors and response
+x = train.columns
+y = "response"
+x.remove(y)
+
+# For binary classification, response should be a factor
+train[y] = train[y].asfactor()
+test[y] = test[y].asfactor()
+
+# Run AutoML for 20 base models
+aml = H20AutoML(max_models=20, seed=1)
+aml.train(x=x, y=y, training_frame=train)
+
+# Show the best-performing models on the AutoML Leaderboard
+lb = aml.leaderboard
+
+# Get the best-performing model
+aml.leader
+```
+
+**NoSQL**
+-
+* Frustration with schema management was the #1 reason for the adoption of their non-relational database
+* NOSQL = Not Only SQL, Document model & graph model.
+* The document model targets use cases where data comes in self-contained documents and relationships between one document and another are rare.
+* The graph model targeting use cases where relationship between data items are common and important.
+
+**Document model**
+-
+* single continous string
+* encoded as JSON, XML or a binary format like BSON (Binary JSON)
+* encoded in the same format. Each document has a unique key that represents that document, which can be used to retrieve it.
+* I can convert a relation into a colelction of documents, convert the book data in tables.
+* All rows in a table must follow the same schema or have the same sequence of columns.
+
+```JSON
+{
+    "Title": "Harry Potter",
+    "Author": "J. K. Rowling",
+    "Publisher": "Banana Press",
+    "Country": "UK",
+    "Sold as": [
+        {"Format": "Paperback", "Price": "$20"},
+        {"Format": "E-book", "Price": "$10"}
+    ]
+}
+```
+
+```JSON
+{
+    "Title": "Sherlock Holmes",
+    "Author": "Conan Doyle",
+    "Publisher": "Guava Press",
+    "Country": "US",
+    "Sold as": [
+        {"Format": "Paperback", "Price": "$30"},
+        {"Format": "E-book", "Price": "$15"}
+    ]
+}
+```
+
+* Document databases just shift the responsibility of assuming strutures fro mthe application that wrotes the data to the application that reads the data.
+* All the information can be stored in a document, making it much easier to retrieve.
+* It's common to use both models for different tasks same database system.
+
+**Graph Model**
+-
+* A graph consist of nodes and edges where the edges represent the relationship between the nodes.
+* The relationships between data items are the priority.
+* It's faster to retrive data based on relationship.
+* Nodes can be of different data types: person, city, country, company.
+* Type: Country (USA) -> Type: State (California) -> Type: City (Palo Alto)
+* Many queries that are easy to do in one data model are harder to do in another data model.
+* Picking the right data model for your application can make your life so much easier.
+
+**Structured Versus Unstructured Data**
+-
+* 
