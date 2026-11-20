@@ -185,4 +185,49 @@ aml.leader
 
 **Structured Versus Unstructured Data**
 -
+* structured data follows a predefined data model aka data schema.
+* The predefine structure makes your data easier to analyze.
+* You have to commit your data to a predefined schema.
+* Business requirements change over time commiting to a predefined data schema can become too restricting.
+* Unstructured data doesn't adhere to a predefined data schema.
+* It might still contain intrinsic patterns that help you extract structures.
+* Unstrucured data also allows for more flexible storage options.
+* Data Warehouse = A repository for storing structured data.
+* Data Lake = A repository for storing unstructured data.
+
+**Data Storage Engines and Processing**
+-
+* Database = Storage Engines
+
+**Transactional and Analytical Processing**
+-
+* Actions that do almost anything with the data
+* They are generated, updated, and changes when they are no longer needed it.
+* Processed fast or low latency only
+
+**ACID**
+* Atomicity = all thre steps in a transaction are completed successfully as a group.
+* Consistency = all the transactions coming through must follow predefined rules
+* Isolation = Uses accessiing the same data won't change it at the same time.
+* Durability = Once a transaction has been commited it will remain commited even in the case of a system failure.
+
+* Analytical database = designed with queries that allow you to look at data from different viewpoints.
+* Online processing = immediately available for input/output.
+* Near-Online = not immediately available but can be made online quickly without human intervention.
+* Offline = Not immediately available and requires some human intervention to become online.
+
+**ETL: Extract, Transform, and Load**
+-
+* Data is 'extracted' from different sources,
+* it's 'transformed' into the desired format before,
+* being 'loaded' into the target destination such as a database or data warehouse.
+* ETL referts to the general purpose processing and aggregating of data into the shape and the format that you want.
+* Extract phase, I need to validate my data and reject the data that doesn't meet the business requirements
+* Transform phase, I will standarize the value ranges.
+* Load phase, deciding how and how often to load your transformed data into the target destination.
+* The process of loading data into storage first then processing it later is sometimes called it 'ELT' or Extract, Load, Transform
+* Hybrid solutions that combine the flexibility of data lakes and the data mangement aspect of data warehouse is preferred such as Databricks, and Snowflake.
+
+**Modes of Dataflow**
+-
 * 
