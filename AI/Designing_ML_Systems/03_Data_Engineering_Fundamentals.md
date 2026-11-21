@@ -230,4 +230,45 @@ aml.leader
 
 **Modes of Dataflow**
 -
-* 
+* In productions, you don't have a single process but multiple.
+* How do we pass data between different process that don't share memory?
+
+**Data Passing Through Databases**
+-
+* A process A can write that data into a database, and process B simply reads from that database
+* Both process must be able to access the same database
+* Both process must be able to access data from database, and read/write from database. could be slow.
+
+**Data Passing Through Services**
+-
+* Send the data directly through a network that connects these 2 processes.
+* request-driven: A sends a reuest -> B specifies the data -> B returns the requested data through the same network.
+* A service is a process that can be accessed remotely.
+* 2 Services in communication with each other can be run by different companies in different applications.
+* 2 services in communication with each other can also be parts of the same application.
+* Strucuture an application as separate services gives you a microservice architecture.
+* The most popular styles of requests used for passing data on network = REST and RPC
+* RESTful seems to be the predominant style for public APIs.
+
+**Data PAssing Through Real-Time Transport**
+-
+* Each of these services needs to send requests to the other 2 services.
+* A services that is down c an cause all services that require data from it to be down.
+* A database act like a broker - each service can write data to a database and other services that need the data can read from that database.
+* Beware of reading and writing from databases are too slow for applications with strict latency requirements.
+* Real-time transports can be thoughy of as in-memory storage for data passing among services.
+* A piece of data broadcast to a real-time transport is called 'an event'. This architecture is called 'event-driven'. A real-time transport is called 'event bus'
+
+**Batch Processing Versus Stream Processing**
+-
+* Data arrives in data storage -> databases, data lakes, or data warehouses -> Historical data.
+* Historical data is often processed in batch jobs. When data is processed in batch jobs or batch processing.
+* Stream processing refers to doing computation on steaming data.
+* Computation on streaming data can also be kicked off whenever the need arises.
+* Stream processing when done right can give low latency because you can process data as soon as data is generated.
+* Batch features = fearures extracted throught batch processing are also known as static features.
+* Steaming features = features extracted through stream processing are also know as dynamic features.
+* You need em both!
+
+Stream processing is more diffucult because the data amount is unbounded and the data comes in at variable rates and speeds.
+It's easier to make a stream processor do batch processing than to make a batch processor do steam processing.
